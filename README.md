@@ -69,3 +69,41 @@ Serviços para gerenciar, monitorar e governar o ambiente do Azure.
 * **Azure Monitor:** Coleta, analisa e age sobre a telemetria de seus ambientes de nuvem e locais.
 * **Azure Policy:** Ajuda a impor padrões organizacionais e a avaliar a conformidade em escala.
 * **Azure Resource Manager (ARM):** O serviço de implantação e gerenciamento do Azure que permite criar, atualizar e excluir recursos em sua assinatura do Azure.
+
+  # Serviços de Computação e Rede do Azure
+
+## Serviços de Computação
+
+Os serviços de computação do Azure formam a base para a execução de aplicações e cargas de trabalho na nuvem, oferecendo desde máquinas virtuais com controle total até plataformas totalmente gerenciadas.
+
+### **Máquinas Virtuais (VMs)**
+As VMs do Azure são servidores virtuais que fornecem a flexibilidade de um servidor físico, permitindo que você instale seu próprio sistema operacional (Windows ou Linux) e software. Elas são ideais para:
+* **Migração de aplicações "lift-and-shift":** Mover aplicações existentes de um ambiente local para a nuvem com poucas ou nenhuma alteração.
+* **Cargas de trabalho que exigem controle total:** Quando você precisa de controle granular sobre a configuração do ambiente.
+* **Desenvolvimento e teste:** Criar ambientes de desenvolvimento e teste isolados de forma rápida e fácil.
+
+### **Serviços de Aplicativos (App Services)**
+O App Service é uma plataforma como serviço (PaaS) totalmente gerenciada para criar e implantar aplicações web e APIs. Ele cuida da infraestrutura, permitindo que você se concentre no código. Suas principais características incluem:
+* **Suporte a várias linguagens e frameworks:** .NET, .NET Core, Java, Ruby, Node.js, PHP e Python.
+* **Escalabilidade automática:** Ajusta automaticamente o número de instâncias com base na demanda.
+* **Implantação contínua:** Integração com o Azure DevOps, GitHub e outros repositórios de código para automatizar o processo de implantação.
+
+### **Funções do Azure (Azure Functions)**
+O Azure Functions é um serviço de computação sem servidor (serverless) que permite executar pequenos trechos de código (funções) em resposta a eventos. Com o Functions, você não precisa se preocupar com o provisionamento ou gerenciamento de servidores. É ideal para:
+* **Processamento de dados em tempo real:** Executar código em resposta a eventos de serviços do Azure, como o upload de um arquivo para o Blob Storage.
+* **Criação de APIs sem servidor:** Construir APIs RESTful escaláveis e econômicas.
+* **Orquestração de fluxos de trabalho:** Criar fluxos de trabalho complexos que integram diferentes serviços e APIs.
+
+### **Serviço de Kubernetes do Azure (AKS)**
+O AKS é um serviço gerenciado de orquestração de contêineres que simplifica a implantação, o gerenciamento e as operações de clusters Kubernetes. Ele oferece:
+* **Gerenciamento simplificado de clusters:** O Azure gerencia o plano de controle do Kubernetes, tornando mais fácil a execução de aplicações em contêineres.
+* **Escalabilidade e disponibilidade:** Permite escalar facilmente o número de nós no cluster e garante alta disponibilidade para suas aplicações.
+* **Integração com o ecossistema do Azure:** Integra-se com outros serviços do Azure, como o Azure Monitor e o Microsoft Entra ID.
+
+## Serviços de Rede
+
+Os serviços de rede do Azure fornecem a base para conectar e proteger seus recursos do Azure, bem como estender sua rede local para a nuvem.
+
+### **Rede Virtual do Azure (VNet)**
+A VNet é o bloco de construção fundamental para sua rede privada no Azure. Ela permite que os recursos do Azure, como VMs, se comuniquem de forma segura entre si, com a internet e com suas redes locais. Com a VNet, você pode:
+* **Isolar seus recursos:** Criar redes virtuais isoladas para diferentes ambientes, como

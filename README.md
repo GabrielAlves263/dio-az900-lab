@@ -107,3 +107,60 @@ Os serviços de rede do Azure fornecem a base para conectar e proteger seus recu
 ### **Rede Virtual do Azure (VNet)**
 A VNet é o bloco de construção fundamental para sua rede privada no Azure. Ela permite que os recursos do Azure, como VMs, se comuniquem de forma segura entre si, com a internet e com suas redes locais. Com a VNet, você pode:
 * **Isolar seus recursos:** Criar redes virtuais isoladas para diferentes ambientes, como
+
+# Serviços de Armazenamento no Azure
+
+A plataforma Microsoft Azure oferece um conjunto robusto e escalável de serviços de armazenamento para atender a diversas necessidades de dados na nuvem. Esses serviços são projetados para serem duráveis, seguros e altamente disponíveis. Os principais tipos de armazenamento são agrupados na conta de Armazenamento do Azure.
+
+### **1. Armazenamento de Blobs do Azure (Azure Blob Storage)**
+
+O Armazenamento de Blobs é a solução de armazenamento de objetos do Azure. É otimizado para armazenar grandes volumes de dados não estruturados, como texto, imagens, vídeos e arquivos de backup.
+
+* **Casos de Uso Comuns:**
+    * Streaming de áudio e vídeo.
+    * Armazenamento de arquivos para acesso distribuído.
+    * Armazenamento de dados para backup, restauração, recuperação de desastres e arquivamento.
+    * Análise de dados (data lakes) com serviços como o Azure Data Lake Storage Gen2.
+* **Tiers (Camadas de Acesso):**
+    * **Hot:** Otimizado para dados acessados com frequência.
+    * **Cool:** Otimizado para dados armazenados por pelo menos 30 dias e acessados com pouca frequência.
+    * **Cold:** Novidade para dados armazenados por pelo menos 90 dias, com requisitos de latência flexíveis.
+    * **Archive:** Otimizado para dados raramente acessados, com requisitos de latência flexíveis (várias horas), oferecendo o menor custo de armazenamento.
+
+### **2. Arquivos do Azure (Azure Files)**
+
+O serviço de Arquivos do Azure oferece compartilhamentos de arquivos totalmente gerenciados na nuvem, que podem ser acessados usando os protocolos Server Message Block (SMB) e Network File System (NFS).
+
+* **Casos de Uso Comuns:**
+    * Substituir ou complementar servidores de arquivos locais.
+    * Aplicações "lift and shift" que precisam de um compartilhamento de arquivos para armazenar dados.
+    * Centralizar o armazenamento de arquivos de configuração ou ferramentas compartilhadas para desenvolvimento e diagnóstico.
+    * Pode ser montado simultaneamente por implantações na nuvem ou locais do Windows, Linux e macOS.
+
+### **3. Armazenamento de Discos do Azure (Azure Disk Storage)**
+
+O Armazenamento de Discos oferece discos de bloco de alto desempenho e duráveis, projetados para serem usados com Máquinas Virtuais do Azure. É semelhante a um disco rígido físico, mas virtualizado.
+
+* **Tipos de Discos:**
+    * **Ultra Disks:** Para cargas de trabalho de uso intensivo de dados, como SAP HANA e bancos de dados de nível superior.
+    * **Premium SSDs:** Discos de alto desempenho para cargas de trabalho de produção e sensíveis à latência.
+    * **Standard SSDs:** Opção econômica para servidores web, aplicações empresariais pouco usadas e ambientes de desenvolvimento/teste.
+    * **Standard HDDs:** A opção mais econômica, ideal para backups e dados não críticos com acesso pouco frequente.
+
+### **4. Armazenamento de Filas do Azure (Azure Queue Storage)**
+
+O Armazenamento de Filas é um serviço para armazenar um grande número de mensagens. Ele permite o desacoplamento de componentes de uma aplicação, possibilitando que eles se comuniquem de forma assíncrona.
+
+* **Casos de Uso Comuns:**
+    * Criar uma lista de trabalhos para processamento assíncrono.
+    * Passar mensagens entre diferentes partes de uma aplicação distribuída sem que elas precisem estar online ao mesmo tempo.
+    * Ajudar a gerenciar picos de tráfego, enfileirando tarefas para processamento posterior e tornando a aplicação mais resiliente.
+
+### **5. Armazenamento de Tabelas do Azure (Azure Table Storage)**
+
+O Armazenamento de Tabelas é um serviço que armazena grandes volumes de dados NoSQL estruturados. É um repositório de chave-atributo com um design sem esquema.
+
+* **Casos de Uso Comuns:**
+    * Armazenar conjuntos de dados flexíveis, como dados de utilizador para aplicações web, catálogos de endereços ou outras informações de metadados.
+    * Aplicações que não necessitam de junções complexas, chaves externas ou procedimentos armazenados.
+    * *Nota: Atualmente, o Azure Cosmos DB for Table é a oferta recomendada para novas aplicações que precisam de armazenamento de tabelas, pois oferece funcionalidades premium.*

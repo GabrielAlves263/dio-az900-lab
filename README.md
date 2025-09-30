@@ -243,3 +243,52 @@ O Azure Blueprints permite que arquitetos de nuvem e grupos de TI definam um con
     * Modelos do Azure Resource Manager (ARM templates).
     * Grupos de recursos.
 * **Governança em Escala:** Simplifica a implantação de ambientes em larga escala, garantindo que novas assinaturas sejam criadas já com a governança, segurança e conformidade necessárias pré-configuradas.
+
+# Governança e Conformidade no Azure
+
+Governança e conformidade no Azure referem-se ao conjunto de práticas, serviços e ferramentas projetados para garantir que o uso da nuvem esteja alinhado com as políticas corporativas e os regulamentos externos. O objetivo é gerenciar riscos, otimizar custos, impor padrões e garantir que a organização atenda a todas as suas obrigações de conformidade.
+
+### **1. Azure Policy**
+
+O Azure Policy é um dos pilares da governança no Azure. Ele permite criar, atribuir e gerenciar políticas que impõem regras e efeitos sobre os recursos, garantindo que as implantações futuras e existentes permaneçam em conformidade.
+
+* **Imposição de Padrões:** Define regras para controlar a configuração dos recursos. Por exemplo, você pode criar políticas para:
+    * Restringir as regiões do Azure onde os recursos podem ser implantados.
+    * Exigir a aplicação de *tags* específicas em todos os recursos para controle de custos.
+    * Impor o uso de SKUs (tamanhos) específicos de máquinas virtuais.
+    * Garantir que o armazenamento tenha a criptografia habilitada.
+* **Avaliação e Remediação:** Avalia continuamente o estado de conformidade dos recursos em relação às políticas atribuídas e pode acionar tarefas para corrigir automaticamente os recursos que não estão em conformidade.
+
+### **2. Azure Blueprints**
+
+O Azure Blueprints permite empacotar, versionar e implantar um conjunto completo de artefatos de governança de forma repetível. É ideal para garantir que novos ambientes (como novas assinaturas) sejam criados já em conformidade com os padrões da organização.
+
+* **Orquestração de Artefatos:** Um único blueprint pode combinar:
+    * **Atribuições de Função (RBAC):** Para garantir que as permissões corretas sejam aplicadas.
+    * **Atribuições de Política (Azure Policy):** Para impor regras de conformidade.
+    * **Modelos do ARM:** Para implantar a infraestrutura padrão necessária.
+    * **Grupos de Recursos:** Para criar a estrutura organizacional.
+* **Governança Controlada:** O relacionamento entre a definição do blueprint e sua atribuição é preservado, permitindo rastreamento e auditoria de implantações.
+
+### **3. Microsoft Purview**
+
+O Microsoft Purview é um serviço de governança de dados unificado que ajuda a gerenciar e governar dados locais, multinuvem e SaaS (software como serviço).
+
+* **Mapeamento de Dados:** Cria um mapa holístico e atualizado do seu panorama de dados, descobrindo e classificando dados confidenciais automaticamente.
+* **Catálogo de Dados:** Permite que os consumidores de dados encontrem facilmente dados valiosos e confiáveis.
+* **Proteção de Dados:** Fornece insights sobre como os dados confidenciais são armazenados e utilizados, ajudando a gerenciar os riscos.
+
+### **4. Microsoft Defender for Cloud**
+
+Embora seja uma ferramenta de segurança, o Microsoft Defender for Cloud desempenha um papel vital na governança e conformidade, oferecendo recursos de Gerenciamento da Postura de Segurança na Nuvem (CSPM).
+
+* **Avaliação de Conformidade Regulatória:** Mede continuamente a conformidade do seu ambiente em relação a benchmarks e padrões regulatórios importantes, como **ISO 27001**, **PCI DSS**, **SOC TSP** e **LGPD**.
+* **Pontuação de Segurança (Secure Score):** Fornece uma visão clara da sua postura de segurança e oferece recomendações priorizadas para mitigar riscos e melhorar a conformidade.
+* **Relatórios e Auditoria:** Gera relatórios detalhados que podem ser usados como evidência para auditorias internas e externas.
+
+### **5. Service Trust Portal e Central de Confiabilidade da Microsoft**
+
+Esses recursos são fundamentais para entender a postura de conformidade da própria Microsoft e como ela pode ajudar na jornada de conformidade da sua organização.
+
+* **Central de Confiabilidade:** Um site público que fornece informações detalhadas sobre as políticas de segurança, privacidade e conformidade da Microsoft.
+* **Service Trust Portal:** Um portal que oferece acesso a relatórios de auditoria de terceiros (como relatórios ISO e SOC), documentação sobre conformidade e informações sobre como os serviços online da Microsoft ajudam a atender aos requisitos de proteção de dados. Isso permite que você realize sua própria avaliação de risco e confirme que os serviços da Microsoft atendem aos seus padrões de conformidade.

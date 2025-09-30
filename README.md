@@ -353,3 +353,52 @@ Para gerenciar o ciclo de vida completo da aplicação, desde o desenvolvimento 
 
 #### **GitHub Actions**
 Sendo o GitHub parte da Microsoft, as GitHub Actions são uma solução de CI/CD totalmente integrada ao ecossistema do GitHub. Permitem criar fluxos de trabalho automatizados diretamente no seu repositório para construir, testar e implantar seu código no Azure. É uma alternativa poderosa e muito popular ao Azure Pipelines, especialmente para projetos de código aberto.
+
+# Ferramentas de Monitoramento no Azure
+
+O monitoramento é uma parte essencial da gestão de qualquer ambiente de TI, e no Azure não é diferente. As ferramentas de monitoramento do Azure fornecem visibilidade completa (observabilidade) sobre a saúde, o desempenho e a segurança de suas aplicações e infraestrutura, permitindo identificar e resolver problemas de forma proativa.
+
+### **1. Azure Monitor**
+
+O Azure Monitor é a solução de monitoramento centralizada e abrangente da plataforma. Ele coleta, analisa e age com base em dados de telemetria de seus ambientes do Azure e locais.
+
+* **Fontes de Dados:** O Azure Monitor coleta dois tipos principais de dados:
+    * **Métricas:** Dados numéricos e leves que representam algum aspecto de um sistema em um ponto no tempo (ex: uso de CPU, latência de rede). São ideais para alertas quase em tempo real.
+    * **Logs:** Registros de eventos, rastreamentos e dados de desempenho. Contêm informações mais detalhadas e são ideais para análises profundas e diagnóstico de causa raiz.
+* **Coleta de Dados:** Os dados são coletados de diversas fontes, incluindo aplicações, sistemas operacionais convidados (via Azure Monitor Agent), recursos do Azure, assinaturas e locatários.
+
+### **2. Componentes Principais do Azure Monitor**
+
+#### **Application Insights**
+É um recurso do Azure Monitor focado no Gerenciamento de Desempenho de Aplicações (APM). Ele monitora suas aplicações web em tempo real para detectar anomalias de desempenho e ajudá-lo a diagnosticar problemas.
+
+* **Recursos:**
+    * Rastreamento de solicitações, taxas de falha e tempos de resposta.
+    * Visualização de dependências da aplicação com o **Mapa da Aplicação**.
+    * Análise de telemetria do lado do cliente (navegador) para entender a experiência do usuário.
+    * Detecção inteligente de anomalias de desempenho e falhas.
+
+#### **Log Analytics e Linguagem de Consulta Kusto (KQL)**
+O Log Analytics é a ferramenta do Portal do Azure para consultar e analisar os dados de log coletados pelo Azure Monitor.
+
+* **Workspace do Log Analytics:** É o ambiente onde os dados de log de várias fontes são agregados e armazenados.
+* **Linguagem de Consulta Kusto (KQL):** Uma linguagem de consulta poderosa e flexível, semelhante ao SQL, usada para realizar análises complexas sobre grandes volumes de dados de log. Com KQL, você pode identificar tendências, encontrar anomalias e diagnosticar problemas detalhadamente.
+
+#### **Alertas e Ações**
+O Azure Monitor permite que você configure alertas para ser notificado proativamente quando os dados indicarem um problema.
+
+* **Regras de Alerta:** Podem ser baseadas em métricas (ex: "CPU acima de 90% por 5 minutos") ou em consultas de log (ex: "mais de 10 erros HTTP 500 na última hora").
+* **Grupos de Ação:** Quando um alerta é acionado, ele pode executar um conjunto de ações, como enviar um e-mail, uma notificação por SMS, acionar uma Função do Azure, chamar um webhook ou criar um ticket em um sistema de ITSM (como o ServiceNow).
+
+### **3. Ferramentas de Visualização**
+
+Visualizar os dados de monitoramento é crucial para entender rapidamente a saúde do seu ambiente.
+
+* **Dashboards do Azure:** Crie painéis de controle personalizados no Portal do Azure, combinando métricas, gráficos e saídas de consultas de log para ter uma visão unificada.
+* **Pastas de Trabalho (Workbooks):** São relatórios interativos e ricos que combinam texto, consultas de métricas e logs e parâmetros. São ideais para criar guias de solução de problemas (runbooks) e análises detalhadas.
+* **Power BI e Grafana:** O Azure Monitor integra-se perfeitamente com essas ferramentas de visualização líderes de mercado para criar painéis e relatórios ainda mais avançados e compartilháveis.
+
+### **4. Outras Ferramentas de Monitoramento Especializadas**
+
+* **Azure Network Watcher:** Fornece ferramentas para monitorar, diagnosticar e obter insights sobre o desempenho e a saúde da sua rede virtual do Azure.
+* **Microsoft Sentinel:** É uma solução de SIEM (Gerenciamento de Eventos e Informações de Segurança) e SOAR (Orquestração, Automação e Resposta de Segurança) nativa da nuvem, que usa os dados do Azure Monitor para detecção de ameaças, caça proativa e resposta a incidentes de segurança.

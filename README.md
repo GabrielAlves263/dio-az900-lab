@@ -164,3 +164,34 @@ O Armazenamento de Tabelas é um serviço que armazena grandes volumes de dados 
     * Armazenar conjuntos de dados flexíveis, como dados de utilizador para aplicações web, catálogos de endereços ou outras informações de metadados.
     * Aplicações que não necessitam de junções complexas, chaves externas ou procedimentos armazenados.
     * *Nota: Atualmente, o Azure Cosmos DB for Table é a oferta recomendada para novas aplicações que precisam de armazenamento de tabelas, pois oferece funcionalidades premium.*
+
+# Identidade, Acesso e Segurança no Azure
+
+Os serviços de identidade, acesso e segurança do Azure formam uma camada de proteção fundamental para todos os recursos na nuvem. Eles garantem que apenas usuários e aplicações autorizadas possam acessar seus dados e infraestrutura, ao mesmo tempo que protegem contra ameaças cibernéticas.
+
+### **1. Microsoft Entra ID (Anteriormente Azure Active Directory)**
+
+O Microsoft Entra ID é o serviço de gerenciamento de identidade e acesso multinuvem da Microsoft. É a base para o controle de acesso no Azure e no Microsoft 365.
+
+* **Gerenciamento de Identidade:** Funciona como um diretório central para gerenciar usuários, grupos e credenciais. Permite a autenticação de identidades para acessar aplicações e recursos.
+* **Logon Único (Single Sign-On - SSO):** Permite que os usuários acessem milhares de aplicações SaaS (como Salesforce, Dropbox) com uma única credencial, simplificando o acesso e melhorando a segurança.
+* **Autenticação Multifator (MFA):** Adiciona uma camada crítica de segurança ao processo de login, exigindo uma segunda forma de verificação (como um código no celular ou biometria) para comprovar a identidade do usuário.
+* **Acesso Condicional:** Permite criar políticas de acesso granulares que avaliam condições específicas (como localização do usuário, dispositivo, aplicação) antes de conceder acesso aos recursos.
+
+### **2. Gerenciamento de Acesso**
+
+Esses serviços controlam *o que* os usuários autenticados podem fazer dentro do ambiente Azure.
+
+* **Controle de Acesso Baseado em Função (RBAC - Role-Based Access Control):** Permite conceder permissões específicas aos usuários e grupos com base em suas funções. Em vez de dar acesso total, você concede apenas o necessário para realizar o trabalho (princípio do menor privilégio). Exemplos de funções são "Leitor", "Colaborador" e "Proprietário".
+* **Azure AD Privileged Identity Management (PIM):** Um serviço avançado para gerenciar, controlar e monitorar o acesso a recursos importantes. Permite o acesso "just-in-time" a funções privilegiadas, o que significa que os usuários só recebem permissões elevadas por um tempo limitado quando precisam delas.
+
+### **3. Segurança e Proteção contra Ameaças**
+
+O Azure oferece um conjunto de ferramentas avançadas para proteger sua infraestrutura e dados contra ameaças e para gerenciar a postura de segurança do seu ambiente.
+
+* **Microsoft Defender for Cloud:** É uma plataforma de gerenciamento de postura de segurança e proteção contra ameaças. Ele monitora continuamente seus recursos na nuvem (Azure e outras nuvens) e locais, fornecendo:
+    * **Pontuação de Segurança (Secure Score):** Avalia sua postura de segurança e fornece recomendações para mitigar riscos.
+    * **Proteção contra ameaças:** Detecta e alerta sobre atividades maliciosas, como tentativas de força bruta em VMs, ataques a bancos de dados SQL e atividades suspeitas em contas de armazenamento.
+* **Azure Key Vault:** Um serviço seguro para armazenar e gerenciar segredos de aplicações, como chaves de API, senhas e certificados. As aplicações podem acessar esses segredos de forma programática e segura, evitando que sejam codificados diretamente no código-fonte.
+* **Firewall do Azure:** Um serviço de segurança de rede inteligente e nativo da nuvem. Ele oferece proteção centralizada contra ameaças para todos os recursos em uma rede virtual, filtrando o tráfego de entrada e saída com base em regras definidas.
+* **Proteção contra DDoS do Azure:** Protege os recursos do Azure contra ataques de negação de serviço distribuído (DDoS), que tentam sobrecarregar e esgotar os recursos de uma aplicação online.

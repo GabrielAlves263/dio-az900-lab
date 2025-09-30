@@ -195,3 +195,51 @@ O Azure oferece um conjunto de ferramentas avançadas para proteger sua infraest
 * **Azure Key Vault:** Um serviço seguro para armazenar e gerenciar segredos de aplicações, como chaves de API, senhas e certificados. As aplicações podem acessar esses segredos de forma programática e segura, evitando que sejam codificados diretamente no código-fonte.
 * **Firewall do Azure:** Um serviço de segurança de rede inteligente e nativo da nuvem. Ele oferece proteção centralizada contra ameaças para todos os recursos em uma rede virtual, filtrando o tráfego de entrada e saída com base em regras definidas.
 * **Proteção contra DDoS do Azure:** Protege os recursos do Azure contra ataques de negação de serviço distribuído (DDoS), que tentam sobrecarregar e esgotar os recursos de uma aplicação online.
+
+* # Gerenciamento de Recursos no Azure
+
+O gerenciamento de recursos no Azure refere-se ao conjunto de ferramentas e serviços que permitem implantar, organizar, governar e controlar os recursos (como máquinas virtuais, bancos de dados e redes) em sua assinatura. Uma gestão eficaz é crucial para otimizar custos, garantir a conformidade e manter a organização do ambiente na nuvem.
+
+### **1. Azure Resource Manager (ARM)**
+
+O ARM é o serviço de implantação e gerenciamento do Azure. Ele funciona como uma camada de gerenciamento unificada que processa todas as solicitações de API para criar, ler, atualizar ou excluir recursos.
+
+* **Implantação Declarativa:** Em vez de escrever scripts com comandos sequenciais, você define o estado final desejado da sua infraestrutura em um modelo (template). O ARM cuida para que o estado implantado corresponda ao que foi declarado.
+* **Modelos ARM (ARM Templates):** São arquivos JSON (ou Bicep, uma linguagem mais simples) que definem todos os recursos, dependências e configurações para uma implantação. Isso permite a prática de Infraestrutura como Código (IaC), tornando as implantações consistentes, repetíveis e automatizadas.
+* **Consistência:** Todas as ferramentas de gerenciamento (Portal do Azure, Azure PowerShell, CLI do Azure, APIs REST) usam o ARM, garantindo uma experiência de gerenciamento consistente em toda a plataforma.
+
+### **2. Grupos de Recursos (Resource Groups)**
+
+Um Grupo de Recursos é um contêiner lógico no qual os recursos do Azure são implantados e gerenciados. É a unidade fundamental de organização e gerenciamento.
+
+* **Ciclo de Vida:** Todos os recursos em um grupo compartilham o mesmo ciclo de vida. Se você excluir o grupo de recursos, todos os recursos contidos nele também serão excluídos.
+* **Organização:** Geralmente, os recursos que compõem uma mesma aplicação ou solução são agrupados. Por exemplo, uma aplicação web pode ter sua VM, banco de dados, conta de armazenamento e rede virtual no mesmo grupo de recursos.
+* **Controle de Acesso e Faturamento:** Permissões de acesso (via RBAC) e custos podem ser aplicados e monitorados no nível do grupo de recursos, simplificando a administração.
+
+### **3. Marcações (Tags)**
+
+Tags são metadados (pares de chave-valor) que você pode aplicar aos seus recursos e grupos de recursos do Azure para organizá-los logicamente.
+
+* **Casos de Uso:**
+    * **Gerenciamento de Custos:** Marcar recursos por departamento (ex: `Departamento: Marketing`) ou projeto (`Projeto: LançamentoProdutoX`) para rastrear e alocar custos.
+    * **Automação:** Usar tags para acionar scripts de automação. Por exemplo, um script pode desligar todas as VMs marcadas com `Ambiente: Desenvolvimento` fora do horário comercial.
+    * **Governança e Conformidade:** Identificar recursos que estão sujeitos a políticas de conformidade específicas.
+
+### **4. Azure Policy**
+
+O Azure Policy é um serviço que permite criar, atribuir e gerenciar políticas que impõem regras e efeitos sobre seus recursos. Ele garante que os recursos permaneçam em conformidade com os padrões corporativos e os contratos de nível de serviço.
+
+* **Aplicação de Regras:** Você pode criar políticas para, por exemplo, permitir a criação de VMs apenas em determinadas regiões, exigir a aplicação de tags específicas em todos os recursos ou proibir a criação de IPs públicos.
+* **Avaliação de Conformidade:** O serviço avalia continuamente seus recursos em relação às políticas atribuídas e fornece um painel para visualizar o estado de conformidade do seu ambiente.
+* **Remediação:** Para recursos não conformes, o Azure Policy pode acionar tarefas de remediação para corrigir a configuração automaticamente.
+
+### **5. Azure Blueprints**
+
+O Azure Blueprints permite que arquitetos de nuvem e grupos de TI definam um conjunto repetível de recursos do Azure que implementam e aderem aos padrões e requisitos de uma organização.
+
+* **Artefatos:** Um blueprint é um pacote que pode conter:
+    * Atribuições de função (RBAC).
+    * Atribuições de política (Azure Policy).
+    * Modelos do Azure Resource Manager (ARM templates).
+    * Grupos de recursos.
+* **Governança em Escala:** Simplifica a implantação de ambientes em larga escala, garantindo que novas assinaturas sejam criadas já com a governança, segurança e conformidade necessárias pré-configuradas.
